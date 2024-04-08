@@ -84,6 +84,7 @@ export enum Network {
   ARBITRUM = 42161,
   AVALANCHE = 43114,
   SEPOLIA = 11155111,
+  KATLA = 167008, // Taiko Katla
 }
 
 export interface Config {

@@ -64,6 +64,7 @@ function validateInput({
     'polygon',
     'optimism',
     'zkevm',
+    'katla',
   ];
   if (!networkNames.includes(network))
     throw Error(`Invalid network name: ${network}`);

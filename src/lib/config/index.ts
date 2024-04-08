@@ -10,6 +10,7 @@ import optimism from './optimism';
 import polygon from './polygon';
 import sepolia from './sepolia';
 import zkevm from './zkevm';
+import katla from './katla';
 
 const config: Record<Network | number, Config> = {
   [Network.MAINNET]: mainnet,
@@ -22,6 +23,7 @@ const config: Record<Network | number, Config> = {
   [Network.AVALANCHE]: avalanche,
   [Network.SEPOLIA]: sepolia,
   [Network.BASE]: base,
+  [Network.KATLA]: katla,
 };
 
 export default config;
