@@ -1,9 +1,4 @@
-import { Pool } from '@/services/pool/types';
-import { BalancerSDK, PoolWithMethods } from '@balancer-labs/sdk';
-import { TransactionResponse } from '@ethersproject/abstract-provider';
-import { Ref } from 'vue';
-import { JoinParams, JoinPoolHandler, QueryOutput } from './join-pool.handler';
-import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { tokensListExclBpt } from '@/composables/usePoolHelpers';
 import {
   bnum,
   findByAddress,
@@ -12,9 +7,14 @@ import {
   isSameAddress,
   selectByAddress,
 } from '@/lib/utils';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { tokensListExclBpt } from '@/composables/usePoolHelpers';
 import { configService } from '@/services/config/config.service';
+import { Pool } from '@/services/pool/types';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
+import { TransactionResponse } from '@ethersproject/abstract-provider';
+import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { BalancerSDK, PoolWithMethods } from '@xclabs/balancer-sdk';
+import { Ref } from 'vue';
+import { JoinParams, JoinPoolHandler, QueryOutput } from './join-pool.handler';
 
 export type ExactInJoinResponse = ReturnType<PoolWithMethods['buildJoin']>;
 /**

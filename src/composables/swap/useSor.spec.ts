@@ -1,14 +1,14 @@
-import { mountComposable } from '@tests/mount-helpers';
 import { BigNumber, formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { mountComposable } from '@tests/mount-helpers';
 import OldBigNumber from 'bignumber.js';
 import { computed, ref } from 'vue';
 
 import useSor, { calcPriceImpact } from '@/composables/swap/useSor';
+import { initDependenciesWithDefaultMocks } from '@/dependencies/default-mocks';
 import { SorManager } from '@/lib/utils/balancer/helpers/sor/sorManager';
 import { configService } from '@/services/config/config.service';
 import { rpcProviderService } from '@/services/rpc-provider/rpc-provider.service';
-import { SwapType } from '@balancer-labs/sdk';
-import { initDependenciesWithDefaultMocks } from '@/dependencies/default-mocks';
+import { SwapType } from '@xclabs/balancer-sdk';
 
 initDependenciesWithDefaultMocks();
 

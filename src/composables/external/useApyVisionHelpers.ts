@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-import { PoolToken } from '@balancer-labs/sdk';
+import { PoolToken } from '@xclabs/balancer-sdk';
 
 import { configService } from '@/services/config/config.service';
 

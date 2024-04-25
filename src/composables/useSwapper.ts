@@ -1,6 +1,6 @@
-import { BatchSwapStep, SwapType, SwapV2 } from '@balancer-labs/sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { TransactionResponse } from '@ethersproject/providers';
+import { BatchSwapStep, SwapType, SwapV2 } from '@xclabs/balancer-sdk';
 
 import { SorReturn } from '@/lib/utils/balancer/helpers/sor/sorManager';
 import {

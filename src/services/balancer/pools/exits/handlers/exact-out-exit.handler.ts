@@ -1,20 +1,20 @@
+import { tokensListExclBpt } from '@/composables/usePoolHelpers';
 import { POOLS } from '@/constants/pools';
 import { TOKENS } from '@/constants/tokens';
+import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 import {
   formatAddressForSor,
   indexOfAddress,
   isSameAddress,
   selectByAddress,
 } from '@/lib/utils';
-import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 import { Pool } from '@/services/pool/types';
 import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { BalancerSDK, PoolWithMethods } from '@balancer-labs/sdk';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { BalancerSDK, PoolWithMethods } from '@xclabs/balancer-sdk';
 import { Ref } from 'vue';
 import { ExitParams, ExitPoolHandler, QueryOutput } from './exit-pool.handler';
-import { tokensListExclBpt } from '@/composables/usePoolHelpers';
 
 export type ExitExactOutResponse = ReturnType<
   PoolWithMethods['buildExitExactTokensOut']

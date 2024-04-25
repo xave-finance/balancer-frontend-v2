@@ -3,10 +3,11 @@ import { getTimestampSecondsFromNow } from '@/composables/useTime';
 import { fetchPoolsForSor, hasFetchedPoolsForSor } from '@/lib/balancer.sdk';
 import { bnum, formatAddressForSor, selectByAddress } from '@/lib/utils';
 import { Pool } from '@/services/pool/types';
-import { BalancerSDK, SwapInfo, SwapType } from '@balancer-labs/sdk';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { BigNumber, formatFixed, parseFixed } from '@ethersproject/bignumber';
 import { JsonRpcSigner } from '@ethersproject/providers';
+import { BalancerSDK, SwapInfo, SwapType } from '@xclabs/balancer-sdk';
 import { Ref } from 'vue';
 import {
   ExitParams,
@@ -14,7 +15,6 @@ import {
   ExitType,
   QueryOutput,
 } from './exit-pool.handler';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 
 /**
  * Handles exits for single asset flows where we need to use a BatchSwap to exit

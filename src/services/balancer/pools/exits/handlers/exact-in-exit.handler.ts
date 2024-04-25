@@ -1,15 +1,6 @@
+import { flatTokenTree } from '@/composables/usePoolHelpers';
+import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
 import { getBalancerSDK } from '@/dependencies/balancer-sdk';
-import { Pool } from '@/services/pool/types';
-import { BalancerSDK, PoolWithMethods } from '@balancer-labs/sdk';
-import { TransactionResponse } from '@ethersproject/abstract-provider';
-import { Ref } from 'vue';
-import {
-  AmountsOut,
-  ExitParams,
-  ExitPoolHandler,
-  QueryOutput,
-} from './exit-pool.handler';
-import { formatFixed, parseFixed } from '@ethersproject/bignumber';
 import {
   formatAddressForSor,
   indexOfAddress,
@@ -17,11 +8,20 @@ import {
   removeAddress,
   selectByAddress,
 } from '@/lib/utils';
+import { Pool } from '@/services/pool/types';
 import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TokenInfo } from '@/types/TokenList';
-import { flatTokenTree } from '@/composables/usePoolHelpers';
+import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { getAddress } from '@ethersproject/address';
-import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
+import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { BalancerSDK, PoolWithMethods } from '@xclabs/balancer-sdk';
+import { Ref } from 'vue';
+import {
+  AmountsOut,
+  ExitParams,
+  ExitPoolHandler,
+  QueryOutput,
+} from './exit-pool.handler';
 
 export type ExitExactInResponse = ReturnType<
   PoolWithMethods['buildExitExactBPTIn']

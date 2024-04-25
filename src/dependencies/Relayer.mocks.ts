@@ -1,5 +1,5 @@
+import { Relayer } from '@xclabs/balancer-sdk';
 import { initRelayer } from './Relayer';
-import { Relayer } from '@balancer-labs/sdk';
 
 export const defaultRelayerSignature = 'test relayer signature';
 

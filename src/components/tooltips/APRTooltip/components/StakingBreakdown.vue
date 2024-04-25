@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
+import { hasBalEmissions } from '@/composables/useAPR';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 import { bnum } from '@/lib/utils';
-import { Pool } from '@/services/pool/types';
-import { AprBreakdown } from '@balancer-labs/sdk';
 import { useTokens } from '@/providers/tokens.provider';
-import { hasBalEmissions } from '@/composables/useAPR';
+import { Pool } from '@/services/pool/types';
 import useWeb3 from '@/services/web3/useWeb3';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 
 /**
  * TYPES

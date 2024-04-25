@@ -2,13 +2,13 @@ import { Network } from '@/lib/config/types';
 import { JsonRpcProvider, JsonRpcSigner } from '@ethersproject/providers';
 import { resolveENSAvatar } from '@tomfrench/ens-avatar-resolver';
 
+import { WalletProvider } from '@/dependencies/wallets/Web3Provider';
 import ConfigService, { configService } from '@/services/config/config.service';
 import {
   rpcProviderService as _rpcProviderService,
   rpcProviderService,
 } from '../rpc-provider/rpc-provider.service';
 import { TransactionBuilder } from './transactions/transaction.builder';
-import { WalletProvider } from '@/dependencies/wallets/Web3Provider';
 
 interface Web3Profile {
   ens: string | null;
@@ -26,7 +26,7 @@ export default class WalletService {
     private readonly config: ConfigService = configService
   ) {
     this.appProvider = this.rpcProviderService.jsonProvider;
-    this.ensProvider = this.rpcProviderService.getJsonProvider(Network.MAINNET);
+    this.ensProvider = this.rpcProviderService.getJsonProvider(Network.ARTIO);
   }
 
   public setUserProvider(provider: ComputedRef<WalletProvider>) {

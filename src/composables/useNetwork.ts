@@ -1,10 +1,9 @@
 import config from '@/lib/config';
-import { Network } from '@/lib/config/types';
+import { Config, Network } from '@/lib/config/types';
 import { configService } from '@/services/config/config.service';
 import { RouteParamsRaw } from 'vue-router';
-import { Config } from '@/lib/config/types';
 // Required vue imports so that claim.worker doesnt fail with undefined errors.
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 
 /**
  * STATE
@@ -24,8 +23,10 @@ const NETWORK_ID =
   urlNetworkId ||
   localStorageNetworkId ||
   (Number(import.meta.env.VITE_NETWORK) as Network) ||
-  Network.MAINNET;
+  Network.ARTIO;
 if (windowAvailable) localStorage.setItem('networkId', NETWORK_ID.toString());
+console.log('NETWORK_ID:', NETWORK_ID);
+console.log('config:', config);
 export const networkSlug = config[NETWORK_ID].slug;
 export const networkConfig = config[NETWORK_ID];
 

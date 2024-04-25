@@ -4,14 +4,14 @@ import BigNumber from 'bignumber.js';
 
 import { PoolSeedToken } from '@/composables/pools/usePoolCreation';
 
+import { initEthersContractWithDefaultMocks } from '@/dependencies/EthersContract.mocks';
+import { Web3ProviderMock } from '@/dependencies/wallets/wallet-connector-mocks';
 import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { JoinPoolRequest, WeightedPoolEncoder } from '@balancer-labs/sdk';
 import { WeightedPool__factory } from '@balancer-labs/typechain';
-import WeightedPoolsService from './weighted-pool.service';
+import { JoinPoolRequest, WeightedPoolEncoder } from '@xclabs/balancer-sdk';
 import polygonCreatePoolReceipt from './__mocks__/polygon-create-pool-receipt';
 import polygonCreatePoolReceiptNoEvents from './__mocks__/polygon-create-pool-receipt-no-events';
-import { Web3ProviderMock } from '@/dependencies/wallets/wallet-connector-mocks';
-import { initEthersContractWithDefaultMocks } from '@/dependencies/EthersContract.mocks';
+import WeightedPoolsService from './weighted-pool.service';
 
 const tokens: Record<string, PoolSeedToken> = {};
 const weightedPoolsService = new WeightedPoolsService();

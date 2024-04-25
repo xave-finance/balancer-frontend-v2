@@ -1,18 +1,18 @@
-import { ComputedRef } from 'vue';
+import {
+  PoolsFallBackFactoryConstructor,
+  getPoolsFallbackRepository,
+} from '@/dependencies/PoolsFallbackRepository';
+import { isBalancerApiDefined } from '@/lib/utils/balancer/api';
+import { balancerAPIService } from '@/services/balancer/api/balancer-api.service';
 import { balancerSubgraphService } from '@/services/balancer/subgraph/balancer-subgraph.service';
 import { PoolDecorator } from '@/services/pool/decorators/pool.decorator';
+import { Pool } from '@/services/pool/types';
+import { TokenInfoMap } from '@/types/TokenList';
 import {
   GraphQLArgs,
   PoolRepository as SDKPoolRepository,
-} from '@balancer-labs/sdk';
-import { balancerAPIService } from '@/services/balancer/api/balancer-api.service';
-import { Pool } from '@/services/pool/types';
-import { TokenInfoMap } from '@/types/TokenList';
-import { isBalancerApiDefined } from '@/lib/utils/balancer/api';
-import {
-  getPoolsFallbackRepository,
-  PoolsFallBackFactoryConstructor,
-} from '@/dependencies/PoolsFallbackRepository';
+} from '@xclabs/balancer-sdk';
+import { ComputedRef } from 'vue';
 
 export default class PoolRepository {
   repository: PoolsFallBackFactoryConstructor;

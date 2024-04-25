@@ -5,13 +5,13 @@ import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
 import { fetchPoolsForSor, hasFetchedPoolsForSor } from '@/lib/balancer.sdk';
 import { bnum, isSameAddress, selectByAddress } from '@/lib/utils';
 import { Pool } from '@/services/pool/types';
-import { BalancerSDK, SwapInfo } from '@balancer-labs/sdk';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { BigNumber, formatFixed, parseFixed } from '@ethersproject/bignumber';
 import { JsonRpcSigner } from '@ethersproject/providers';
+import { BalancerSDK, SwapInfo } from '@xclabs/balancer-sdk';
 import { Ref } from 'vue';
 import { JoinParams, JoinPoolHandler, QueryOutput } from './join-pool.handler';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 
 /**
  * Handles joins for single asset flows where we need to use a BatchSwap to join

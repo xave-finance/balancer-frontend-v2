@@ -3,6 +3,7 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import APRTooltip from '@/components/tooltips/APRTooltip/APRTooltip.vue';
+import useNetwork from '@/composables/useNetwork';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 import {
   isLBP,
@@ -10,11 +11,10 @@ import {
   totalAprLabel,
 } from '@/composables/usePoolHelpers';
 import { APR_THRESHOLD, VOLUME_THRESHOLD } from '@/constants/pools';
-import { Pool } from '@/services/pool/types';
-import { AprBreakdown } from '@balancer-labs/sdk';
 import { useCrossChainSync } from '@/providers/cross-chain-sync.provider';
-import useNetwork from '@/composables/useNetwork';
+import { Pool } from '@/services/pool/types';
 import useWeb3 from '@/services/web3/useWeb3';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 
 /**
  * TYPES

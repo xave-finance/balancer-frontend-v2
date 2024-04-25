@@ -2,15 +2,15 @@ import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 import { Pool } from '@/services/pool/types';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
 import { Ref } from 'vue';
-import { SwapJoinHandler } from './handlers/swap-join.handler';
+import { GeneralisedJoinHandler } from './handlers/generalised-join.handler';
 import {
   JoinParams,
   JoinPoolHandler,
   QueryOutput,
 } from './handlers/join-pool.handler';
-import { GeneralisedJoinHandler } from './handlers/generalised-join.handler';
+import { SwapJoinHandler } from './handlers/swap-join.handler';
 
-import { BalancerSDK } from '@balancer-labs/sdk';
+import { BalancerSDK } from '@xclabs/balancer-sdk';
 import { ExactInJoinHandler } from './handlers/exact-in-join.handler';
 
 export enum JoinHandler {

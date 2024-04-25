@@ -1,11 +1,11 @@
-import { AprBreakdown } from '@balancer-labs/sdk';
 import { EmptyPoolMock } from '@/__mocks__/pool';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 
-import APRTooltip from './APRTooltip.vue';
-import { Pool } from '@/services/pool/types';
-import { configService } from '@/services/config/config.service';
 import { POOLS } from '@/constants/pools';
+import { configService } from '@/services/config/config.service';
+import { Pool } from '@/services/pool/types';
 import { renderComponent } from '@tests/renderComponent';
+import APRTooltip from './APRTooltip.vue';
 
 vi.mock('@/providers/tokens.provider');
 

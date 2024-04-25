@@ -7,13 +7,13 @@ import { APR_THRESHOLD } from '@/constants/pools';
 import { bnum } from '@/lib/utils';
 import { Pool } from '@/services/pool/types';
 
+import { hasStakingRewards } from '@/composables/useAPR';
+import { usePoints } from '@/composables/usePoints';
+import useWeb3 from '@/services/web3/useWeb3';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 import StakingBreakdown from './components/StakingBreakdown.vue';
 import VeBalBreakdown from './components/VeBalBreakdown.vue';
 import YieldBreakdown from './components/YieldBreakdown.vue';
-import { AprBreakdown } from '@balancer-labs/sdk';
-import { hasStakingRewards } from '@/composables/useAPR';
-import useWeb3 from '@/services/web3/useWeb3';
-import { usePoints } from '@/composables/usePoints';
 
 /**
  * TYPES

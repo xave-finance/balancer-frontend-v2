@@ -1,6 +1,6 @@
-import { BatchSwapStep, SwapV2 } from '@balancer-labs/sdk';
 import { BigNumberish } from '@ethersproject/bignumber';
 import { TransactionRequest } from '@ethersproject/providers';
+import { BatchSwapStep, SwapV2 } from '@xclabs/balancer-sdk';
 
 export type RuleFunction = (val: string | number) => string | boolean;
 export type Rules = Array<RuleFunction>;

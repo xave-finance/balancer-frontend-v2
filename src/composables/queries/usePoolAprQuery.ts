@@ -1,14 +1,14 @@
+import { QueryObserverOptions, useQuery } from '@tanstack/vue-query';
 import { computed, reactive } from 'vue';
-import { useQuery, QueryObserverOptions } from '@tanstack/vue-query';
 
 import QUERY_KEYS from '@/constants/queryKeys';
 import { poolsStoreService } from '@/services/pool/pools-store.service';
 import { Pool } from '@/services/pool/types';
 
+import { getBalancerSDK } from '@/dependencies/balancer-sdk';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 import useNetwork from '../useNetwork';
 import usePoolQuery from './usePoolQuery';
-import { AprBreakdown } from '@balancer-labs/sdk';
-import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 
 type QueryOptions = QueryObserverOptions<AprBreakdown>;
 

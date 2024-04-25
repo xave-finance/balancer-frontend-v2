@@ -1,34 +1,34 @@
+import { bnum } from '@/lib/utils';
+import { BigNumber, parseFixed } from '@ethersproject/bignumber';
+import { WeiPerEther as ONE, Zero } from '@ethersproject/constants';
+import { formatUnits } from '@ethersproject/units';
 import {
   buildRelayerCalls,
   SubgraphPoolBase,
   SwapInfo,
   SwapTypes,
-} from '@balancer-labs/sdk';
-import { BigNumber, parseFixed } from '@ethersproject/bignumber';
+} from '@xclabs/balancer-sdk';
 import OldBigNumber from 'bignumber.js';
-import { formatUnits } from '@ethersproject/units';
-import { WeiPerEther as ONE, Zero } from '@ethersproject/constants';
-import { bnum } from '@/lib/utils';
 
 import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 import useWeb3 from '@/services/web3/useWeb3';
 import { TokenInfo } from '@/types/TokenList';
 
-import { useTokens } from '@/providers/tokens.provider';
-import useTransactions from '../useTransactions';
 import useRelayerApproval, {
   RelayerType,
 } from '@/composables/approvals/useRelayerApproval';
+import { useTokens } from '@/providers/tokens.provider';
 import { configService } from '@/services/config/config.service';
+import useTransactions from '../useTransactions';
 
-import { SwapQuote } from './types';
-import useNumbers, { FNumFormats } from '../useNumbers';
-import useEthers from '../useEthers';
 import useRelayerApprovalQuery from '@/composables/queries/useRelayerApprovalQuery';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import BatchRelayerAbi from '@/lib/abi/BatchRelayer.json';
-import { useI18n } from 'vue-i18n';
 import { captureBalancerException, isUserError } from '@/lib/utils/errors';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
+import { useI18n } from 'vue-i18n';
+import useEthers from '../useEthers';
+import useNumbers, { FNumFormats } from '../useNumbers';
+import { SwapQuote } from './types';
 
 type JoinExitState = {
   validationErrors: {

@@ -4,20 +4,20 @@ import { POOLS } from '@/constants/pools';
 import QUERY_KEYS from '@/constants/queryKeys';
 import { Pool } from '@/services/pool/types';
 
-import useNetwork from '../useNetwork';
-import { useTokens } from '@/providers/tokens.provider';
-import { configService } from '@/services/config/config.service';
-import { GraphQLArgs, PoolsRepositoryFetchOptions } from '@balancer-labs/sdk';
 import { getPoolsFallbackRepository } from '@/dependencies/PoolsFallbackRepository';
-import { PoolDecorator } from '@/services/pool/decorators/pool.decorator';
-import { flatten } from 'lodash';
-import { tokenTreeLeafs } from '../usePoolHelpers';
-import { balancerSubgraphService } from '@/services/balancer/subgraph/balancer-subgraph.service';
-import { balancerAPIService } from '@/services/balancer/api/balancer-api.service';
-import { poolsStoreService } from '@/services/pool/pools-store.service';
-import { isBalancerApiDefined } from '@/lib/utils/balancer/api';
 import { bnum } from '@/lib/utils';
+import { isBalancerApiDefined } from '@/lib/utils/balancer/api';
+import { useTokens } from '@/providers/tokens.provider';
+import { balancerAPIService } from '@/services/balancer/api/balancer-api.service';
+import { balancerSubgraphService } from '@/services/balancer/subgraph/balancer-subgraph.service';
+import { configService } from '@/services/config/config.service';
+import { PoolDecorator } from '@/services/pool/decorators/pool.decorator';
+import { poolsStoreService } from '@/services/pool/pools-store.service';
 import { PoolAttributeFilter, PoolFilterOptions } from '@/types/pools';
+import { GraphQLArgs, PoolsRepositoryFetchOptions } from '@xclabs/balancer-sdk';
+import { flatten } from 'lodash';
+import useNetwork from '../useNetwork';
+import { tokenTreeLeafs } from '../usePoolHelpers';
 import { weeksAgoInSecs } from '../useTime';
 
 type PoolsQueryResponse = {

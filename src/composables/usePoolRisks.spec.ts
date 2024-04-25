@@ -1,22 +1,22 @@
 import { aBoostedPool } from '@/__mocks__/boosted-pool';
-import {
-  generateThirdPartyComposabilityRisks,
-  riskLinks,
-  risksTitle,
-} from './usePoolRisks';
 import { aWeightedPool } from '@/__mocks__/weighted-pool';
-import { aPool } from '@tests/unit/builders/pool.builders';
-import { PoolType } from '@balancer-labs/sdk';
 import { networkId } from '@/composables/useNetwork';
-import { Network } from '@/lib/config/types';
 import { POOLS } from '@/constants/pools';
+import { initDependenciesWithDefaultMocks } from '@/dependencies/default-mocks';
 import {
   idleBoostedPoolId,
   poolIdWithTwoBoostedProtocols,
   reaperBoostedPoolId,
   tetuBoostedPoolId,
 } from '@/lib/config/goerli/pools';
-import { initDependenciesWithDefaultMocks } from '@/dependencies/default-mocks';
+import { Network } from '@/lib/config/types';
+import { aPool } from '@tests/unit/builders/pool.builders';
+import { PoolType } from '@xclabs/balancer-sdk';
+import {
+  generateThirdPartyComposabilityRisks,
+  riskLinks,
+  risksTitle,
+} from './usePoolRisks';
 
 initDependenciesWithDefaultMocks();
 

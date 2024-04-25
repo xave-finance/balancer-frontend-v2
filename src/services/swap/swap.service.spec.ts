@@ -1,14 +1,15 @@
+import { BigNumber } from '@ethersproject/bignumber';
+import { AddressZero } from '@ethersproject/constants';
 import {
   FundManagement,
   SingleSwap,
   SwapType,
   SwapV2,
-} from '@balancer-labs/sdk';
-import { BigNumber } from '@ethersproject/bignumber';
-import { AddressZero } from '@ethersproject/constants';
+} from '@xclabs/balancer-sdk';
 
 import { configService } from '@/services/config/config.service';
 
+import { initContractConcernWithDefaultMocks } from '@/dependencies/contract.concern.mocks';
 import { lidoRelayerService } from '@/services/contracts/lido-relayer.service';
 import { vaultService } from '@/services/contracts/vault.service';
 import { walletService } from '@/services/web3/wallet.service';
@@ -18,7 +19,6 @@ import {
 } from '../contracts/vault.service.mocks';
 import { setUserAddress } from '../web3/__mocks__/web3.service';
 import { SwapService, SwapToken, SwapTokenType } from './swap.service';
-import { initContractConcernWithDefaultMocks } from '@/dependencies/contract.concern.mocks';
 
 vi.mock('@/lib/utils/balancer/lido');
 vi.mock('@/services/contracts/lido-relayer.service');

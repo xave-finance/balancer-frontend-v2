@@ -1,10 +1,10 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import {
   FundManagement,
   SingleSwap,
   SwapType,
   SwapV2,
-} from '@balancer-labs/sdk';
-import { BigNumber } from '@ethersproject/bignumber';
+} from '@xclabs/balancer-sdk';
 
 import { initContractConcernWithDefaultMocks } from '@/dependencies/contract.concern.mocks';
 import { walletService } from '@/services/web3/wallet.service';

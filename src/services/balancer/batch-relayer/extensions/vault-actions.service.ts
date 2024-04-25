@@ -1,4 +1,5 @@
 import { Interface } from '@ethersproject/abi';
+import { ExitPoolRequest } from '@xclabs/balancer-sdk';
 import VaultActionsAbi from '../abi/VaultActions.json';
 import {
   EncodeBatchSwapInput,
@@ -6,7 +7,6 @@ import {
   EncodeJoinPoolInput,
   ExitPoolData,
 } from '../relayer-types';
-import { ExitPoolRequest } from '@balancer-labs/sdk';
 
 export class VaultActionsService {
   public encodeBatchSwap(params: EncodeBatchSwapInput): string {

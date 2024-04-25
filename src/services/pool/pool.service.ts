@@ -11,12 +11,11 @@ import {
 } from '@/services/pool/types';
 import { TokenInfoMap } from '@/types/TokenList';
 
-import { OnchainDataFormater } from './decorators/onchain-data.formater';
-import { AprBreakdown } from '@balancer-labs/sdk';
 import { networkId } from '@/composables/useNetwork';
 import { getBalancerSDK } from '@/dependencies/balancer-sdk';
-import { Pool as SDKPool } from '@balancer-labs/sdk';
 import { captureBalancerException } from '@/lib/utils/errors';
+import { AprBreakdown, Pool as SDKPool } from '@xclabs/balancer-sdk';
+import { OnchainDataFormater } from './decorators/onchain-data.formater';
 
 export default class PoolService {
   constructor(public pool: Pool) {

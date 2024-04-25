@@ -1,26 +1,26 @@
-import { PoolType, toNormalizedWeights } from '@balancer-labs/sdk';
 import { Vault__factory } from '@balancer-labs/typechain';
 import { getAddress } from '@ethersproject/address';
 import { BigNumber } from '@ethersproject/bignumber';
 import { formatUnits } from '@ethersproject/units';
+import { PoolType, toNormalizedWeights } from '@xclabs/balancer-sdk';
 import { Contract } from 'ethers';
 import { pick } from 'lodash';
 
 import {
+  isComposableStable,
+  isComposableStableLike,
+  isDeep,
   isStableLike,
   isSwappingHaltable,
   isWeightedLike,
-  isDeep,
-  isComposableStableLike,
-  isComposableStable,
 } from '@/composables/usePoolHelpers';
 import VaultAbi from '@/lib/abi/VaultAbi.json';
 import { isSameAddress } from '@/lib/utils';
-import { Pool } from '@/services/pool/types';
 import {
   LinearPoolDataMap,
   OnchainPoolData,
   OnchainTokenDataMap,
+  Pool,
   RawLinearPoolData,
   RawLinearPoolDataMap,
   RawOnchainPoolData,
@@ -28,9 +28,9 @@ import {
 } from '@/services/pool/types';
 import { TokenInfoMap } from '@/types/TokenList';
 
+import { getOldMulticaller } from '@/dependencies/OldMulticaller';
 import Service from '../balancer-contracts.service';
 import ProtocolFeesCollector from './protocol-fees-collector';
-import { getOldMulticaller } from '@/dependencies/OldMulticaller';
 
 export default class Vault {
   service: Service;

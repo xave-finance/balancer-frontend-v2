@@ -1,18 +1,18 @@
+import { flatTokenTree } from '@/composables/usePoolHelpers';
+import { getBalancerSDK } from '@/dependencies/balancer-sdk';
+import { bnum, isSameAddress } from '@/lib/utils';
 import { Pool } from '@/services/pool/types';
-import { BalancerSDK, SimulationType } from '@balancer-labs/sdk';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
+import { getAddress } from '@ethersproject/address';
+import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { BalancerSDK, SimulationType } from '@xclabs/balancer-sdk';
 import {
+  AmountsOut,
   ExitParams,
   ExitPoolHandler,
   QueryOutput,
-  AmountsOut,
 } from './exit-pool.handler';
-import { getBalancerSDK } from '@/dependencies/balancer-sdk';
-import { formatFixed, parseFixed } from '@ethersproject/bignumber';
-import { bnum, isSameAddress } from '@/lib/utils';
-import { flatTokenTree } from '@/composables/usePoolHelpers';
-import { getAddress } from '@ethersproject/address';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 
 type BalancerSdkType = ReturnType<typeof getBalancerSDK>;
 export type ExitResponse = Awaited<

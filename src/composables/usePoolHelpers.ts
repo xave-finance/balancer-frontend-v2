@@ -1,5 +1,5 @@
-import { AprBreakdown, PoolType } from '@balancer-labs/sdk';
 import { getAddress } from '@ethersproject/address';
+import { AprBreakdown, PoolType } from '@xclabs/balancer-sdk';
 
 import { APR_THRESHOLD } from '@/constants/pools';
 import { Network } from '@/lib/config/types';
@@ -20,6 +20,7 @@ import {
   PoolWarning,
 } from '@/types/pools';
 
+import { poolMetadata } from '@/lib/config/metadata';
 import {
   AnyPool,
   Pool,
@@ -27,8 +28,9 @@ import {
   SubPool,
   allLinearTypes,
 } from '@/services/pool/types';
-import { hasBalEmissions } from './useAPR';
 import { cloneDeep, uniq, uniqWith } from 'lodash';
+import { VotingPool } from './queries/useVotingPoolsQuery';
+import { hasBalEmissions } from './useAPR';
 import {
   appUrl,
   getNetworkSlug,
@@ -36,11 +38,9 @@ import {
   isPoolBoostsEnabled,
 } from './useNetwork';
 import useNumbers, { FNumFormats, numF } from './useNumbers';
-import { dateToUnixTimestamp } from './useTime';
-import { poolMetadata } from '@/lib/config/metadata';
-import { Protocol } from './useProtocols';
 import { usePoolWarning } from './usePoolWarning';
-import { VotingPool } from './queries/useVotingPoolsQuery';
+import { Protocol } from './useProtocols';
+import { dateToUnixTimestamp } from './useTime';
 
 const POOLS = configService.network.pools;
 

@@ -84,6 +84,8 @@ export enum Network {
   ARBITRUM = 42161,
   AVALANCHE = 43114,
   SEPOLIA = 11155111,
+  ARTIO = 80085, // Berachain testnet
+  KATLA = 167008, // Taiko testnet
 }
 
 export interface Config {

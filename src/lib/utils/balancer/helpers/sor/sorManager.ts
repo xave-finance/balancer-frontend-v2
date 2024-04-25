@@ -1,3 +1,6 @@
+import { BigNumber } from '@ethersproject/bignumber';
+import { AddressZero } from '@ethersproject/constants';
+import { Provider } from '@ethersproject/providers';
 import {
   PoolFilter,
   SOR as SORV2,
@@ -5,10 +8,7 @@ import {
   SwapInfo,
   SwapOptions,
   SwapTypes,
-} from '@balancer-labs/sdk';
-import { BigNumber } from '@ethersproject/bignumber';
-import { AddressZero } from '@ethersproject/constants';
-import { Provider } from '@ethersproject/providers';
+} from '@xclabs/balancer-sdk';
 
 import {
   NATIVE_ASSET_ADDRESS,

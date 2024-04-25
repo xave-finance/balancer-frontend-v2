@@ -3,6 +3,9 @@ import { computed, reactive } from 'vue';
 import { Gauge } from '@/services/balancer/gauges/types';
 import { PoolToken } from '@/services/pool/types';
 
+import QUERY_KEYS from '@/constants/queryKeys';
+import { subgraphFallbackService } from '@/services/balancer/subgraph/subgraph-fallback.service';
+import { PoolType } from '@xclabs/balancer-sdk';
 import useGaugesDecorationQuery from './queries/useGaugesDecorationQuery';
 import useGaugesQuery from './queries/useGaugesQuery';
 import useGraphQuery from './queries/useGraphQuery';
@@ -11,9 +14,6 @@ import useProtocolRewardsQuery, {
   ProtocolRewardsQueryResponse,
 } from './queries/useProtocolRewardsQuery';
 import { isQueryLoading } from './queries/useQueryHelpers';
-import { subgraphFallbackService } from '@/services/balancer/subgraph/subgraph-fallback.service';
-import { PoolType } from '@balancer-labs/sdk';
-import QUERY_KEYS from '@/constants/queryKeys';
 
 export type GaugePool = {
   id: string;

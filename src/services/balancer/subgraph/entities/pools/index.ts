@@ -1,12 +1,12 @@
+import { Network } from '@/lib/config/types';
 import { configService } from '@/services/config/config.service';
 import { Pool } from '@/services/pool/types';
-import { Network } from '@/lib/config/types';
 import { PoolsQueryBuilder } from '@/types/subgraph';
 import {
   GraphQLArgs,
   GraphQLQuery,
   PoolsSubgraphRepository,
-} from '@balancer-labs/sdk';
+} from '@xclabs/balancer-sdk';
 import _ from 'lodash';
 import Service from '../../balancer-subgraph.service';
 import queryBuilder from './query';

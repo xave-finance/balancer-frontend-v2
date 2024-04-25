@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { SubgraphPoolBase } from '@balancer-labs/sdk';
 import { formatUnits } from '@ethersproject/units';
+import { SubgraphPoolBase } from '@xclabs/balancer-sdk';
 import { mapValues } from 'lodash';
 import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import SwapRoute from '@/components/cards/SwapCard/SwapRoute.vue';
-import { SwapQuote } from '@/composables/swap/types';
+import { ApprovalAction } from '@/composables/approvals/types';
 import useRelayerApproval, {
   RelayerType,
 } from '@/composables/approvals/useRelayerApproval';
 import useRelayerApprovalTx from '@/composables/approvals/useRelayerApprovalTx';
 import useTokenApprovalActions from '@/composables/approvals/useTokenApprovalActions';
-import { ApprovalAction } from '@/composables/approvals/types';
+import { SwapQuote } from '@/composables/swap/types';
 import { UseSwapping } from '@/composables/swap/useSwapping';
-import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 import useNetwork from '@/composables/useNetwork';
-import { useTokens } from '@/providers/tokens.provider';
-import { useUserSettings } from '@/providers/user-settings.provider';
+import useNumbers, { FNumFormats } from '@/composables/useNumbers';
 import { FiatCurrency } from '@/constants/currency';
 import { bnum, bnumZero } from '@/lib/utils';
 import { isStETH } from '@/lib/utils/balancer/lido';
-import { getWrapAction, WrapType } from '@/lib/utils/balancer/wrapper';
+import { WrapType, getWrapAction } from '@/lib/utils/balancer/wrapper';
+import { useTokens } from '@/providers/tokens.provider';
+import { useUserSettings } from '@/providers/user-settings.provider';
 import useWeb3 from '@/services/web3/useWeb3';
 import { TransactionActionInfo } from '@/types/transactions';
 

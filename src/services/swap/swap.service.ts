@@ -1,13 +1,13 @@
+import { TransactionResponse } from '@ethersproject/abstract-provider';
+import { BigNumber } from '@ethersproject/bignumber';
+import { AddressZero } from '@ethersproject/constants';
 import {
   BatchSwapStep,
   FundManagement,
   SingleSwap,
   SwapType,
   SwapV2,
-} from '@balancer-labs/sdk';
-import { TransactionResponse } from '@ethersproject/abstract-provider';
-import { BigNumber } from '@ethersproject/bignumber';
-import { AddressZero } from '@ethersproject/constants';
+} from '@xclabs/balancer-sdk';
 
 import { isSameAddress } from '@/lib/utils';
 import {

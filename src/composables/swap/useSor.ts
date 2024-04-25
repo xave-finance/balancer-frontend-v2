@@ -1,9 +1,3 @@
-import {
-  SubgraphPoolBase,
-  SwapType,
-  SwapTypes,
-  parseFixed,
-} from '@balancer-labs/sdk';
 import { BigNumber, formatFixed } from '@ethersproject/bignumber';
 import {
   AddressZero,
@@ -12,8 +6,15 @@ import {
 } from '@ethersproject/constants';
 import { TransactionResponse } from '@ethersproject/providers';
 import { formatUnits, parseUnits } from '@ethersproject/units';
+import {
+  SubgraphPoolBase,
+  SwapType,
+  SwapTypes,
+  parseFixed,
+} from '@xclabs/balancer-sdk';
 import { useI18n } from 'vue-i18n';
 
+import { useSwapper } from '@/composables/useSwapper';
 import { NATIVE_ASSET_ADDRESS } from '@/constants/tokens';
 import { getBalancerSDK } from '@/dependencies/balancer-sdk';
 import { bnum } from '@/lib/utils';
@@ -22,27 +23,26 @@ import {
   SorReturn,
 } from '@/lib/utils/balancer/helpers/sor/sorManager';
 import { convertStEthWrap, isStEthAddress } from '@/lib/utils/balancer/lido';
-import { useSwapper } from '@/composables/useSwapper';
 import {
+  WrapType,
   getWrapOutput,
   unwrap,
   wrap,
-  WrapType,
 } from '@/lib/utils/balancer/wrapper';
 import { configService } from '@/services/config/config.service';
 import { rpcProviderService } from '@/services/rpc-provider/rpc-provider.service';
 import useWeb3 from '@/services/web3/useWeb3';
 import { TokenInfo } from '@/types/TokenList';
 
-import useEthers from '../useEthers';
-import useFathom from '../useFathom';
-import useNumbers, { FNumFormats } from '../useNumbers';
-import { isMainnet } from '../useNetwork';
-import { useTokens } from '@/providers/tokens.provider';
-import useTransactions, { TransactionAction } from '../useTransactions';
-import { SwapQuote } from './types';
 import { overflowProtected } from '@/components/_global/BalTextInput/helpers';
 import { captureBalancerException, isUserError } from '@/lib/utils/errors';
+import { useTokens } from '@/providers/tokens.provider';
+import useEthers from '../useEthers';
+import useFathom from '../useFathom';
+import { isMainnet } from '../useNetwork';
+import useNumbers, { FNumFormats } from '../useNumbers';
+import useTransactions, { TransactionAction } from '../useTransactions';
+import { SwapQuote } from './types';
 
 type SorState = {
   validationErrors: {

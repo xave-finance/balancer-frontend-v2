@@ -1,6 +1,11 @@
+import { flatTokenTree } from '@/composables/usePoolHelpers';
+import { isSameAddress, removeAddress } from '@/lib/utils';
 import { Pool } from '@/services/pool/types';
-import { BalancerSDK, PoolWithMethods } from '@balancer-labs/sdk';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
+import { getAddress } from '@ethersproject/address';
+import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { BalancerSDK, PoolWithMethods } from '@xclabs/balancer-sdk';
 import { Ref } from 'vue';
 import {
   AmountsOut,
@@ -8,11 +13,6 @@ import {
   ExitPoolHandler,
   QueryOutput,
 } from './exit-pool.handler';
-import { formatFixed, parseFixed } from '@ethersproject/bignumber';
-import { isSameAddress, removeAddress } from '@/lib/utils';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { flatTokenTree } from '@/composables/usePoolHelpers';
-import { getAddress } from '@ethersproject/address';
 
 export type RecoveryExitResponse = ReturnType<
   PoolWithMethods['buildRecoveryExit']

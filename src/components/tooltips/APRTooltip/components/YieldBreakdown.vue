@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Pool } from '@/services/pool/types';
-import { AprBreakdown } from '@balancer-labs/sdk';
 import { getAddress } from '@ethersproject/address';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 import { computed } from 'vue';
 
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';

@@ -1,12 +1,12 @@
-import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { SubgraphPoolBase } from '@balancer-labs/sor';
+import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import {
   BatchSwapStep,
   ExitPoolRequest,
   FundManagement,
   JoinPoolRequest,
   SwapType,
-} from '@balancer-labs/sdk';
+} from '@xclabs/balancer-sdk';
 
 export type OutputReference = {
   index: number;

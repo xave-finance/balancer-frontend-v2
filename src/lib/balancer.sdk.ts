@@ -1,6 +1,6 @@
-import { BalancerSDK } from '@balancer-labs/sdk';
 import { Network } from '@/lib/config/types';
 import { configService } from '@/services/config/config.service';
+import { BalancerSDK } from '@xclabs/balancer-sdk';
 import { ref } from 'vue';
 // import { isTestMode } from '@/plugins/modes';
 

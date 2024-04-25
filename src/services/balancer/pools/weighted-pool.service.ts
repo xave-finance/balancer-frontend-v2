@@ -1,4 +1,4 @@
-import { toNormalizedWeights } from '@balancer-labs/sdk';
+import { WalletProvider } from '@/dependencies/wallets/Web3Provider';
 import {
   Vault__factory,
   WeightedPool__factory,
@@ -8,18 +8,18 @@ import { defaultAbiCoder } from '@ethersproject/abi';
 import { BigNumber as EPBigNumber } from '@ethersproject/bignumber';
 import { AddressZero } from '@ethersproject/constants';
 import { JsonRpcProvider, TransactionResponse } from '@ethersproject/providers';
-import { WalletProvider } from '@/dependencies/wallets/Web3Provider';
-import BigNumber from 'bignumber.js';
 import { formatUnits } from '@ethersproject/units';
+import { toNormalizedWeights } from '@xclabs/balancer-sdk';
+import BigNumber from 'bignumber.js';
 
 import { PoolSeedToken } from '@/composables/pools/usePoolCreation';
+import { POOLS } from '@/constants/pools';
+import { getOldMulticaller } from '@/dependencies/OldMulticaller';
+import WeightedPoolFactoryV4Abi from '@/lib/abi/WeightedPoolFactoryV4.json';
 import { isSameAddress, scale } from '@/lib/utils';
+import { generateSalt } from '@/lib/utils/random';
 import { configService } from '@/services/config/config.service';
 import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { getOldMulticaller } from '@/dependencies/OldMulticaller';
-import { POOLS } from '@/constants/pools';
-import WeightedPoolFactoryV4Abi from '@/lib/abi/WeightedPoolFactoryV4.json';
-import { generateSalt } from '@/lib/utils/random';
 
 type Address = string;
 

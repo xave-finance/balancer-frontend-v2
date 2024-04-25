@@ -1,5 +1,5 @@
-import { GraphQLArgs } from '@balancer-labs/sdk';
 import { POOLS } from '@/constants/pools';
+import { GraphQLArgs } from '@xclabs/balancer-sdk';
 import { merge } from 'lodash';
 
 const defaultArgs: GraphQLArgs = {

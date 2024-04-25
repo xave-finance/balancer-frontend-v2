@@ -1,5 +1,5 @@
-import { toNormalizedWeights } from '@balancer-labs/sdk';
 import { formatUnits } from '@ethersproject/units';
+import { toNormalizedWeights } from '@xclabs/balancer-sdk';
 
 import { isStableLike, isWeightedLike } from '@/composables/usePoolHelpers';
 import { TokenInfoMap } from '@/types/TokenList';

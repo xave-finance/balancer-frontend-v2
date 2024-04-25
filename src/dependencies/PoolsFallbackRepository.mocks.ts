@@ -1,10 +1,10 @@
+import { anSdkPool } from '@tests/unit/builders/sdk-pool.builders';
 import {
-  Pool as SdkPool,
   // eslint-disable-next-line no-restricted-imports
   PoolsFallbackRepository,
   PoolsRepositoryFetchOptions,
-} from '@balancer-labs/sdk';
-import { anSdkPool } from '@tests/unit/builders/sdk-pool.builders';
+  Pool as SdkPool,
+} from '@xclabs/balancer-sdk';
 import { initPoolsFallbackRepository } from './PoolsFallbackRepository';
 
 export const defaultPool1: SdkPool = anSdkPool();

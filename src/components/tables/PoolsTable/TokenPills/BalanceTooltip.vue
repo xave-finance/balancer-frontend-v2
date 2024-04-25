@@ -3,10 +3,10 @@ import { computed } from 'vue';
 
 import BalAsset from '@/components/_global/BalAsset/BalAsset.vue';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
-import { useTokens } from '@/providers/tokens.provider';
 import { shortenLabel } from '@/lib/utils';
+import { useTokens } from '@/providers/tokens.provider';
 import useWeb3 from '@/services/web3/useWeb3';
-import { PoolToken } from '@balancer-labs/sdk';
+import { PoolToken } from '@xclabs/balancer-sdk';
 
 /**
  * TYPES

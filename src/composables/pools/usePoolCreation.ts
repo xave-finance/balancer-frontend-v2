@@ -1,8 +1,3 @@
-import { getAddress } from '@ethersproject/address';
-import { TransactionResponse } from '@ethersproject/providers';
-import BigNumber from 'bignumber.js';
-import { flatten, sumBy } from 'lodash';
-import { computed, reactive, ref, toRefs } from 'vue';
 import usePoolsQuery from '@/composables/queries/usePoolsQuery';
 import useEthers from '@/composables/useEthers';
 import useTransactions from '@/composables/useTransactions';
@@ -17,11 +12,16 @@ import {
 } from '@/lib/utils';
 import { balancerService } from '@/services/balancer/balancer.service';
 import useWeb3 from '@/services/web3/useWeb3';
+import { getAddress } from '@ethersproject/address';
+import { TransactionResponse } from '@ethersproject/providers';
+import BigNumber from 'bignumber.js';
+import { flatten, sumBy } from 'lodash';
+import { computed, reactive, ref, toRefs } from 'vue';
 
 import { useTokens } from '@/providers/tokens.provider';
-import { PoolType } from '@balancer-labs/sdk';
-import { wNativeAssetAddress } from '../usePoolHelpers';
+import { PoolType } from '@xclabs/balancer-sdk';
 import { isGoerli } from '../useNetwork';
+import { wNativeAssetAddress } from '../usePoolHelpers';
 
 export const POOL_CREATION_STATE_VERSION = '1.0';
 export const POOL_CREATION_STATE_KEY = 'poolCreationState';

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import { SubgraphPoolBase, SwapV2 } from '@balancer-labs/sdk';
 import { getAddress } from '@ethersproject/address';
 import { AddressZero } from '@ethersproject/constants';
+import { SubgraphPoolBase, SwapV2 } from '@xclabs/balancer-sdk';
 import BigNumber from 'bignumber.js';
 
+import { networkSlug } from '@/composables/useNetwork';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
-import { useTokens } from '@/providers/tokens.provider';
 import {
   NATIVE_ASSET_ADDRESS,
   WRAPPED_NATIVE_ASSET_ADDRESS,
 } from '@/constants/tokens';
 import { isSameAddress } from '@/lib/utils';
 import { SorReturn } from '@/lib/utils/balancer/helpers/sor/sorManager';
-import { networkSlug } from '@/composables/useNetwork';
+import { useTokens } from '@/providers/tokens.provider';
 
 interface Props {
   addressIn: string;

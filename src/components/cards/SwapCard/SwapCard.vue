@@ -84,28 +84,28 @@
 </template>
 
 <script lang="ts">
-import { SubgraphPoolBase } from '@balancer-labs/sdk';
-import { getAddress, isAddress } from '@ethersproject/address';
-import { formatUnits } from '@ethersproject/units';
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
-import { useSwapAssets } from '@/composables/swap/useSwapAssets';
 import SwapPreviewModal from '@/components/modals/SwapPreviewModal.vue';
 import SwapSettingsPopover, {
   SwapSettingsContext,
 } from '@/components/popovers/SwapSettingsPopover.vue';
+import { useSwapAssets } from '@/composables/swap/useSwapAssets';
 import { useSwapState } from '@/composables/swap/useSwapState';
 import useSwapping from '@/composables/swap/useSwapping';
 import useValidation from '@/composables/swap/useValidation';
 import useBreakpoints from '@/composables/useBreakpoints';
 import useNumbers, { FNumFormats } from '@/composables/useNumbers';
-import { useTokens } from '@/providers/tokens.provider';
 import { TOKENS } from '@/constants/tokens';
 import { lsGet } from '@/lib/utils';
 import { WrapType } from '@/lib/utils/balancer/wrapper';
 import { isRequired } from '@/lib/utils/validations';
+import { useTokens } from '@/providers/tokens.provider';
 import { ApiErrorCodes } from '@/services/cowswap/errors/OperatorError';
 import useWeb3 from '@/services/web3/useWeb3';
+import { getAddress, isAddress } from '@ethersproject/address';
+import { formatUnits } from '@ethersproject/units';
+import { SubgraphPoolBase } from '@xclabs/balancer-sdk';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
 import SwapPair from './SwapPair.vue';
 import SwapRoute from './SwapRoute.vue';
 

@@ -9,6 +9,10 @@ import {
 } from '@/services/balancer/pools/exits/handlers/generalised-exit.handler';
 import { RecoveryExitResponse } from '@/services/balancer/pools/exits/handlers/recovery-exit.handler';
 import { ExactInJoinResponse } from '@/services/balancer/pools/joins/handlers/exact-in-join.handler';
+import { BigNumber } from '@ethersproject/bignumber';
+import { wethAddress } from '@tests/unit/builders/address';
+import { aPoolWithMethods } from '@tests/unit/builders/pool.builders';
+import { DeepPartial } from '@tests/unit/types';
 import {
   Migrations,
   Pool,
@@ -16,11 +20,7 @@ import {
   SubgraphPoolBase,
   SwapAttributes,
   SwapInfo,
-} from '@balancer-labs/sdk';
-import { BigNumber } from '@ethersproject/bignumber';
-import { wethAddress } from '@tests/unit/builders/address';
-import { aPoolWithMethods } from '@tests/unit/builders/pool.builders';
-import { DeepPartial } from '@tests/unit/types';
+} from '@xclabs/balancer-sdk';
 import { mock, mockDeep } from 'vitest-mock-extended';
 
 export const defaultSorPools: DeepPartial<Pool[]> = [

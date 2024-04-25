@@ -4,19 +4,19 @@ import { useI18n } from 'vue-i18n';
 import BalChipNew from '@/components/chips/BalChipNew.vue';
 import GauntletIcon from '@/components/images/icons/GauntletIcon.vue';
 import APRTooltip from '@/components/tooltips/APRTooltip/APRTooltip.vue';
+import { useDisabledJoinPool } from '@/composables/useDisabledJoinPool';
 import useNumbers from '@/composables/useNumbers';
-import { usePoolWarning } from '@/composables/usePoolWarning';
 import { isFx, usePoolHelpers } from '@/composables/usePoolHelpers';
-import { useTokens } from '@/providers/tokens.provider';
+import { usePoolWarning } from '@/composables/usePoolWarning';
 import { EXTERNAL_LINKS } from '@/constants/links';
 import { POOLS } from '@/constants/pools';
+import { poolMetadata as getPoolMetadata } from '@/lib/config/metadata';
 import { includesAddress } from '@/lib/utils';
 import { usePoolStaking } from '@/providers/local/pool-staking.provider';
+import { useTokens } from '@/providers/tokens.provider';
 import { Pool, PoolToken } from '@/services/pool/types';
 import useWeb3 from '@/services/web3/useWeb3';
-import { AprBreakdown } from '@balancer-labs/sdk';
-import { useDisabledJoinPool } from '@/composables/useDisabledJoinPool';
-import { poolMetadata as getPoolMetadata } from '@/lib/config/metadata';
+import { AprBreakdown } from '@xclabs/balancer-sdk';
 
 /**
  * TYPES

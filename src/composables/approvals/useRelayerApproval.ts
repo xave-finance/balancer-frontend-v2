@@ -1,17 +1,17 @@
-import useWeb3 from '@/services/web3/useWeb3';
-import { computed, ref, watch } from 'vue';
-import useNetwork from '../useNetwork';
-import { Vault } from '@balancer-labs/sdk';
-import { configService } from '@/services/config/config.service';
-import { Vault__factory } from '@balancer-labs/typechain';
-import { useI18n } from 'vue-i18n';
-import { TransactionActionInfo } from '@/types/transactions';
 import useRelayerApprovalTx from '@/composables/approvals/useRelayerApprovalTx';
 import useGnosisSafeApp from '@/composables/useGnosisSafeApp';
-import { COW_RELAYER_CONTRACT_ADDRESS } from '@/services/cowswap/constants';
-import { isWalletConnectWallet } from '@/services/web3/wallet-names';
-import { useUserSettings } from '@/providers/user-settings.provider';
 import { getRelayer } from '@/dependencies/Relayer';
+import { useUserSettings } from '@/providers/user-settings.provider';
+import { configService } from '@/services/config/config.service';
+import { COW_RELAYER_CONTRACT_ADDRESS } from '@/services/cowswap/constants';
+import useWeb3 from '@/services/web3/useWeb3';
+import { isWalletConnectWallet } from '@/services/web3/wallet-names';
+import { TransactionActionInfo } from '@/types/transactions';
+import { Vault__factory } from '@balancer-labs/typechain';
+import { Vault } from '@xclabs/balancer-sdk';
+import { computed, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+import useNetwork from '../useNetwork';
 
 /**
  * TYPES

@@ -1,13 +1,13 @@
+import { bnum, isSameAddress, selectByAddress } from '@/lib/utils';
+import { configService } from '@/services/config/config.service';
 import { Pool } from '@/services/pool/types';
-import { BalancerSDK, SimulationType } from '@balancer-labs/sdk';
+import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
 import { TransactionResponse } from '@ethersproject/abstract-provider';
+import { formatFixed, parseFixed } from '@ethersproject/bignumber';
+import { AddressZero } from '@ethersproject/constants';
+import { BalancerSDK, SimulationType } from '@xclabs/balancer-sdk';
 import { Ref } from 'vue';
 import { JoinParams, JoinPoolHandler, QueryOutput } from './join-pool.handler';
-import { formatFixed, parseFixed } from '@ethersproject/bignumber';
-import { bnum, isSameAddress, selectByAddress } from '@/lib/utils';
-import { TransactionBuilder } from '@/services/web3/transactions/transaction.builder';
-import { configService } from '@/services/config/config.service';
-import { AddressZero } from '@ethersproject/constants';
 
 type JoinResponse = Awaited<
   ReturnType<BalancerSDK['pools']['generalisedJoin']>
